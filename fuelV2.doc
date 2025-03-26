@@ -1,0 +1,77 @@
+/*
+ *  Programmer:     Corey Jenkins
+ *  Date:           March 24, 2024
+ *  Filename:       fuelV2.doc
+ *  Purpose:        Using a combination of a switch and while loops for input validation to select
+ *                  which type of fuel and how many gallons. It will then calculate the price by the amount.
+ *                  of gallons inputted.
+*/
+
+Declare Module main()
+    Declare String regular = "Regular"
+    Declare String plus = "Plus"
+    Declare String supreme = "Supreme"
+
+    Declare Float regularPrice = 3.99
+    Declare Float plusPrice = 4.99
+    Declare Float supremePrice = 5.99
+
+    Declare Float gallons
+    Declare Float total
+
+    Declare Integer fuelSelect
+
+    Display "Select fuel:"
+    Display "1 - Regular"
+    Display "2 - Plus"
+    Dispaly "3 - Supreme"
+    Input fuelSelect
+
+    While fuelSelect <= 0 or fuelSelect > 3
+        Display "Error! Please select a fuel grade from below. These are your options:"
+        Display "1 - Regular"
+        Display "2 - Plus"
+        Display "3 - Supreme"
+        Input fuelSelect
+    End While
+
+    select fuelSelect
+
+    Case 01:
+        Display "You have selected" regular "."
+        Display "Enter the amount of gallons:"
+        Input gallons 
+        While gallons <= 0
+            Display "Error! Please enter a postive number. Please enter the amount of gallons again:"
+            Input gallons
+        End While
+
+        Set total = gallons * regularPrice
+        Display "Thank you. Here's your receipt:" total
+
+    Case 02:
+        Display "You have selected" plus "."
+        Display "Enter the amount of gallons."
+        Input gallons
+
+        While Gallons <= 0
+            Display "Error! Please enter a postiive number. Enter the amount of gallons again:"
+            Input gallons
+        End While
+
+        Set total = gallons * plusPrice
+        Display "Thank you! Here's your receipt:" total
+        
+    Case 03:
+        Display "You have selected" surpreme "."
+        Input gallons
+
+        While gallons <= 0
+            Display "Error! Please enter a postiive number. Enter the amount of gallons again:"
+            Input gallons
+        End While
+
+        Set total = gallons * supremePrice
+        Display "Thank you! Here's your receipt:" total
+    End Select 
+End Module 

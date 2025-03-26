@@ -1,0 +1,79 @@
+/*
+ *  Programmer:     Corey Jenkins
+ *  Date:           March 25, 2024
+ *  Filename:       FuelV3.doc
+ *  Purpose:        Using structs and while loops to create a program that calculates how it cost to fuel
+ *                   up a vehicle by fuel grade and gallon(s) entered.
+*/
+
+Declare Struct FuelV3
+    Declare String regular = "Regular"
+    Declare String plus = "Plus"
+    Declare String supreme = "Supreme"
+
+    Declare Double regularPrice = 3.99
+    Declare Double plusPrice = 4.99
+    Declare Double supremePrice = 5.99
+End Struct
+
+Declare Module main()
+    Declare FuelV3 myFuel
+    Declare integer gallons
+    Declare Double total
+
+    Declare Integer fuelSelect
+    Display "Enter your fuel grade:"
+    Display "1 - Regular"
+    Display "2 - Plus" 
+    Display "3 - Supreme"
+    While fuelSelect < 1 OR fuelSelect > 3 Then
+        Display "Error! Please select your fuel grade:"
+        Display "1 - Regular"
+        Display "2 - Plus"
+        Display "3 - Supreme" 
+    End While
+
+    Select fuelSelect
+        Case 1:
+            Set myFuel.regular 
+            Set myFuel.regularPrice 
+            Display "You have selected" myFuel.regular
+            Display "Enter gallon(s)"
+            Input gallons
+            While gallons <= 0 Then 
+                Display "Error! Please enter a positive value and try again. Please enter gallons:" 
+                Input gallons
+            End While
+
+            total = gallons * myFuel.regularPrice
+            Display "Here is the total amount" total
+
+         Case 2:
+            Set myFuel.plus 
+            Set myFuel.plusPricePrice 
+            Display "You have selected" myFuel.plus
+            Display "Enter gallon(s)"
+            Input gallons
+            While gallons <= 0 Then 
+                Display "Error! Please enter a positive value and try again. Please enter gallons:" 
+                Input gallons
+            End While
+
+            total = gallons * myFuel.plusPrice
+            Display "Here is the total amount" total
+
+         Case 3:
+            Set myFuel.supreme
+            Set myFuel.supremePrice
+            Display "You have selected" myFuel.supremePrice
+            Display "Enter gallon(s)"
+            Input gallons
+            While gallons <= 0 Then 
+                Display "Error! Please enter a positive value and try again. Please enter gallons:" 
+                Input gallons
+            End While
+
+            total = gallons * myFuel.supremePrice
+            Display "Here is the total amount" total
+    End Select
+End Module
