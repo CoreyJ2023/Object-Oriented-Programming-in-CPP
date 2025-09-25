@@ -1,6 +1,6 @@
 /**
  * Programmer:      Corey Jenkins
- * Date:            March 25, 2025
+ * Date:            March 25, 2025 (Updated July 17, 2025)
  * Filename:        bugCollector.cpp 
  */
 
@@ -18,10 +18,10 @@ class KiloMeterConverter
     double kilometerFormula {};
 public:
     // Constructor
-    KiloMeterConverter(double kilometerFormula) : kilometerFormula(kilometerFormula) {}
+    KiloMeterConverter(double kiloForm) : kilometerFormula(kiloForm) {}
 
     // Setter
-    void setKiloMeterConverter(double kilometerFormula) {kilometerFormula = kilometerFormula;}
+    void setKiloMeterConverter(double kiloForm) {kiloForm = kilometerFormula;}
     
     // Getter
     double getKiloMeterConverter() const {return kilometerFormula;}
